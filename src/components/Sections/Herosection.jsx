@@ -34,9 +34,10 @@ function Herosection() {
           className="spacer d-md-none d-lg-none d-sm-none"
           data-height="10"
         ></div>
-        <ScrollLink
+        <a href="mailto:adenugaib24@gmail.com">
+        <button
           activeClass="active"
-          to="section-contact"
+          to=""
           spy={true}
           smooth={true}
           duration={500}
@@ -44,7 +45,10 @@ function Herosection() {
           className="btn btn-border-light btn-lg"
         >
           <i className="icon-envelope"></i>Hire me
-        </ScrollLink>
+        </button>
+
+        </a>
+        
       </div>
       <div className="overlay"></div>
     </section>
