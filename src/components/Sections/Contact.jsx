@@ -61,7 +61,7 @@ function Contact() {
         <div className="contact-info mb-5">
           <i className="icon-phone"></i>
           <div className="details">
-            <h5><a href="tel:08101200547">Phone</a></h5>
+            <h5><a href="tel:08101200547"></a></h5>
             {contactData.phone.map((singlePhone, index) => (
               <span key={index}>{singlePhone}</span>
             ))}

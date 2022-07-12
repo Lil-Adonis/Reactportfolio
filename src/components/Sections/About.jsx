@@ -5,8 +5,8 @@ const aboutData = {
   cvpath: "media/my-Resume.pdf",
   image: "/images/logo.jpg",
   name: "Adenuga Ibraheem",
-  location: "Abeokuta, Nigeria",
-  birthday: "14 August, 1990",
+  location: "Nigeria",
+  quickAccess: "Twitter",
   email: "adenugaib24@gmail.com",
   aboutMe:
     "I'm a Front-end Developer with over 2 years of experience. I'm from NIgeria. I code and create web elements for amazing people around the world. I like to work with new people. New people are new experiences. I have rich experience in web site design and building and customization.",
@@ -27,7 +27,7 @@ function About() {
               Name: <span className="text-dark">{aboutData.name}</span>
             </p>
             <p className="mb-0">
-              Birthday: <span className="text-dark">{aboutData.birthday}</span>
+              Quick Access to me: <span className="text-dark">{aboutData.quickAccess}</span>
             </p>
           </div>
           <div className="col-md-6 mt-2 mt-md-0 mt-sm-2">

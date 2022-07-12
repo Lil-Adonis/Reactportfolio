@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { Link as ScrollLink } from "react-scroll";
 import { Link, useRouteMatch } from "react-router-dom";
+import {motion} from "framer-motion";
 import {
   FaLinkedinIn,
   FaTwitter,
   FaGithub,
-  FaFigma,
+  FaFacebook,
   FaDribbble,
 } from "react-icons/fa";
 
@@ -17,7 +18,7 @@ const headerData = {
     linkedIn: "https://www.linkedin.com/in/adenuga-ibraheem-306574213/",
     twitter: "https://twitter.com/LilAdonise",
     github: "https://github.com/Lil-Adonis",
-    figma: "https://www.figma.com/files/recent?fuid=951827690239246841",
+    facebook: "https://www.figma.com/files/recent?fuid=951827690239246841",
     dribbble: "https://dribbble.com/",
   },
 };
@@ -32,12 +33,15 @@ function Header({ toggleHeader, toggleHandler }) {
 
   return (
     <>
-      <div
+      <motion.div
         className={ 
           toggleHeader
             ? "mobile-header py-2 px-3 mt-4 push"
             : "mobile-header py-2 px-3 mt-4"
         }
+        initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{delay:1.5, duration:1.5}}
       >
         <button className="menu-icon mr-2" onClick={toggleHandler}>
           <span></span>
@@ -50,14 +54,17 @@ function Header({ toggleHeader, toggleHandler }) {
         <Link to="/" className="site-title dot ml-2">
           {headerData.name}
         </Link>
-      </div>
+      </motion.div>
 
-      <header
+      <motion.header
         className={
           toggleHeader
             ? "left float-left shadow-dark open"
             : "left float-left shadow-dark"
         }
+        initial={{opacity:0}}
+      animate={{opacity:1}}
+      transition={{delay:1.5, duration:1.5}}
       >
         <button
           type="button"
@@ -79,7 +86,9 @@ function Header({ toggleHeader, toggleHandler }) {
 
           <nav>
             <ul className="vertical-menu scrollspy">
-              <li>
+              <motion.li
+              
+              >
                 {currentPath === "/" ? (
                   <ScrollLink
                     activeClass="active"
@@ -96,7 +105,7 @@ function Header({ toggleHeader, toggleHandler }) {
                     <i className="icon-home"></i>Home
                   </Link>
                 )}
-              </li>
+              </motion.li>
               <li>
                 {currentPath === "/" ? (
                   <ScrollLink
@@ -214,10 +223,10 @@ function Header({ toggleHeader, toggleHandler }) {
                   </a>
                 </li>
               )}
-              {!headerData.social.figma ? null : (
+              {!headerData.social.facebook ? null : (
                 <li className="list-inline-item">
-                  <a href={headerData.social.figma}>
-                    <FaFigma />
+                  <a href={headerData.social.facebook}>
+                    <FaFacebook />
                   </a>
                 </li>
               )}
@@ -232,7 +241,7 @@ function Header({ toggleHeader, toggleHandler }) {
 
           </div>
         </div>
-      </header>
+      </motion.header>
     </>
   );
 }

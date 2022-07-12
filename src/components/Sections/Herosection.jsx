@@ -1,5 +1,6 @@
 import React from "react";
 import { Link as ScrollLink } from "react-scroll";
+import {motion} from "framer-motion";
 
 const herosectionData = {
   name: "Ibraheem",
@@ -9,9 +10,12 @@ const herosectionData = {
 
 function Herosection() {
   return (
-    <section
+    <motion.section
       className="hero background parallax shadow-dark d-flex align-items-center"
       style={{ backgroundImage: "url(/images/hero.jpg.)"  }}
+      initial={{x:'-100vw'}}
+              animate={{x:0}}
+      transition={{delay:1.5, duration:1.5}}
     >
       <div className="cta mx-auto mt-2">
         <h1 className="mt-0 mb-4 cd-words-wrapper">
@@ -51,7 +55,7 @@ function Herosection() {
         
       </div>
       <div className="overlay"></div>
-    </section>
+    </motion.section>
   );
 }
 
